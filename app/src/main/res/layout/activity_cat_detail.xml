@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ Created by Arif Ikhsanudin
   ~ On 8/11/19 12:07 PM
   -->
@@ -11,14 +10,15 @@
     android:layout_height="match_parent"
     tools:context=".ui.CatDetailActivity">
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/img_cat_detail"
-        tools:background="@color/colorAccent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:layout_marginStart="@dimen/activity_horizontal_margin"
         android:layout_width="200dp"
-        android:layout_height="300dp" />
+        android:layout_height="200dp"
+        android:layout_marginTop="32dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:background="@color/colorAccent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
