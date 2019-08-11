@@ -1,4 +1,6 @@
-package com.example.cats.models;
+package com.example.cats.data;
+
+import com.example.cats.models.Cat;
 
 import java.util.ArrayList;
 
