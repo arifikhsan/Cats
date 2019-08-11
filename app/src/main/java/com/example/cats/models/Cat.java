@@ -1,6 +1,9 @@
 package com.example.cats.models;
 
-public class Cat {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Cat implements Parcelable {
     public String name;
     public String image;
     public String origin;
@@ -65,4 +68,39 @@ public class Cat {
     public void setDescription(String description) {
         this.description = description;
     }
+
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(this.name);
+        dest.writeString(this.image);
+        dest.writeString(this.origin);
+        dest.writeString(this.lifeSpan);
+        dest.writeString(this.description);
+    }
+
+    protected Cat(Parcel in) {
+        this.name = in.readString();
+        this.image = in.readString();
+        this.origin = in.readString();
+        this.lifeSpan = in.readString();
+        this.description = in.readString();
+    }
+
+    public static final Parcelable.Creator<Cat> CREATOR = new Parcelable.Creator<Cat>() {
+        @Override
+        public Cat createFromParcel(Parcel source) {
+            return new Cat(source);
+        }
+
+        @Override
+        public Cat[] newArray(int size) {
+            return new Cat[size];
+        }
+    };
 }
