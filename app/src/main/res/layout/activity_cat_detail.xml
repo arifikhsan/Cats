@@ -7,6 +7,7 @@
     tools:context=".ui.CatDetailActivity">
 
     <ImageView
+        android:id="@+id/img_cat_detail"
         tools:background="@color/colorAccent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
