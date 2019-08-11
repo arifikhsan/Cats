@@ -10,7 +10,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,8 +18,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.cats.R;
 import com.example.cats.adapters.ListCatAdapter;
-import com.example.cats.models.Cat;
 import com.example.cats.data.CatsData;
+import com.example.cats.models.Cat;
 
 import java.util.ArrayList;
 
