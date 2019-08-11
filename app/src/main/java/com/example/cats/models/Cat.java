@@ -1,32 +1,34 @@
+/*
+ * Created by Arif Ikhsanudin
+ * On 8/11/19 12:07 PM
+ */
+
 package com.example.cats.models;
 
 import android.os.Parcel;
 import android.os.Parcelable;
 
 public class Cat implements Parcelable {
-    public String name;
-    public String image;
-    public String origin;
-    public String lifeSpan;
-    public String description;
+    private String name;
+    private String image;
+    private String origin;
+    private String lifeSpan;
+    private String description;
+    private Integer childFriendly;
+    private Integer dogFriendly;
+    private Integer strangerFriendly;
+    private String temperament;
 
-    public Cat(String name, String image, String origin, String lifeSpan, String description) {
+    public Cat(String name, String image, String origin, String lifeSpan, String description, Integer childFriendly, Integer dogFriendly, Integer strangerFriendly, String temperament) {
         this.name = name;
         this.image = image;
         this.origin = origin;
         this.lifeSpan = lifeSpan;
         this.description = description;
-    }
-
-    @Override
-    public String toString() {
-        return "Cat{" +
-                "name='" + name + '\'' +
-                ", image='" + image + '\'' +
-                ", origin='" + origin + '\'' +
-                ", lifeSpan='" + lifeSpan + '\'' +
-                ", description='" + description + '\'' +
-                '}';
+        this.childFriendly = childFriendly;
+        this.dogFriendly = dogFriendly;
+        this.strangerFriendly = strangerFriendly;
+        this.temperament = temperament;
     }
 
     public String getName() {
@@ -69,6 +71,53 @@ public class Cat implements Parcelable {
         this.description = description;
     }
 
+    public Integer getChildFriendly() {
+        return childFriendly;
+    }
+
+    public void setChildFriendly(Integer childFriendly) {
+        this.childFriendly = childFriendly;
+    }
+
+    public Integer getDogFriendly() {
+        return dogFriendly;
+    }
+
+    public void setDogFriendly(Integer dogFriendly) {
+        this.dogFriendly = dogFriendly;
+    }
+
+    public Integer getStrangerFriendly() {
+        return strangerFriendly;
+    }
+
+    public void setStrangerFriendly(Integer strangerFriendly) {
+        this.strangerFriendly = strangerFriendly;
+    }
+
+    public String getTemperament() {
+        return temperament;
+    }
+
+    public void setTemperament(String temperament) {
+        this.temperament = temperament;
+    }
+
+    @Override
+    public String toString() {
+        return "Cat{" +
+                "name='" + name + '\'' +
+                ", image='" + image + '\'' +
+                ", origin='" + origin + '\'' +
+                ", lifeSpan='" + lifeSpan + '\'' +
+                ", description='" + description + '\'' +
+                ", childFriendly=" + childFriendly +
+                ", dogFriendly=" + dogFriendly +
+                ", strangerFriendly=" + strangerFriendly +
+                ", temperament='" + temperament + '\'' +
+                '}';
+    }
+
 
     @Override
     public int describeContents() {
@@ -82,6 +131,10 @@ public class Cat implements Parcelable {
         dest.writeString(this.origin);
         dest.writeString(this.lifeSpan);
         dest.writeString(this.description);
+        dest.writeValue(this.childFriendly);
+        dest.writeValue(this.dogFriendly);
+        dest.writeValue(this.strangerFriendly);
+        dest.writeString(this.temperament);
     }
 
     protected Cat(Parcel in) {
@@ -90,6 +143,10 @@ public class Cat implements Parcelable {
         this.origin = in.readString();
         this.lifeSpan = in.readString();
         this.description = in.readString();
+        this.childFriendly = (Integer) in.readValue(Integer.class.getClassLoader());
+        this.dogFriendly = (Integer) in.readValue(Integer.class.getClassLoader());
+        this.strangerFriendly = (Integer) in.readValue(Integer.class.getClassLoader());
+        this.temperament = in.readString();
     }
 
     public static final Parcelable.Creator<Cat> CREATOR = new Parcelable.Creator<Cat>() {

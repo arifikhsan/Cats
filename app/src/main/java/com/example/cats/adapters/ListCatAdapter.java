@@ -1,3 +1,8 @@
+/*
+ * Created by Arif Ikhsanudin
+ * On 8/11/19 12:07 PM
+ */
+
 package com.example.cats.adapters;
 
 import android.view.LayoutInflater;
