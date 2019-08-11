@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground"
     android:orientation="horizontal"
     android:padding="@dimen/activity_vertical_margin">
 
@@ -10,6 +11,7 @@
         android:id="@+id/img_cat"
         android:layout_width="60dp"
         android:layout_height="60dp"
+        android:layout_centerVertical="true"
         tools:src="@android:color/darker_gray" />
 
     <LinearLayout
@@ -22,12 +24,14 @@
 
         <TextView
             android:id="@+id/tv_item_name"
+            style="@style/TextAppearance.AppCompat.Title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:text="Nama Jenis Kucing" />
 
         <TextView
             android:id="@+id/tv_item_origin"
+            style="@style/TextAppearance.AppCompat.Small"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/activity_vertical_margin"
@@ -35,6 +39,7 @@
 
         <TextView
             android:id="@+id/tv_item_description"
+            style="@style/TextAppearance.AppCompat.Body1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:text="Deskripsi kucing" />
