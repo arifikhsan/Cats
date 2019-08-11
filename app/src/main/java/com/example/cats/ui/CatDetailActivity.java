@@ -31,7 +31,7 @@ public class CatDetailActivity extends AppCompatActivity {
         if (cat != null) {
             Glide.with(this)
                     .load(cat.getImage())
-                    .apply(new RequestOptions().override(200, 300))
+                    .apply(new RequestOptions().override(200, 200))
                     .into(imageView);
         }
     }
