@@ -8,8 +8,11 @@ package com.example.cats.ui;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -53,8 +56,30 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void moveToCatDetailActivity(Cat cat) {
-        Intent moveToCatDetailIntent = new Intent(MainActivity.this, CatDetailActivity.class);
+        Intent moveToCatDetailIntent = new Intent(this, CatDetailActivity.class);
         moveToCatDetailIntent.putExtra(CatDetailActivity.EXTRA_CAT, cat);
         startActivity(moveToCatDetailIntent);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        onMenuClick(item.getItemId());
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void onMenuClick(int selectedMenu) {
+        if (selectedMenu == R.id.action_about) {
+            showAboutMe();
+        }
+    }
+
+    protected void showAboutMe() {
+        startActivity(new Intent(this, AboutActivity.class));
     }
 }
