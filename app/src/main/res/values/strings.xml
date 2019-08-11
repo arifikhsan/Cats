@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Cats</string>
+    <string name="my_name">Arif Ikhsanudin</string>
+    <string name="my_email">arif.ikhsanudin.developer@gmail.com</string>
 </resources>
