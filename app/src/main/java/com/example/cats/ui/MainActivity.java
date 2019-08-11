@@ -1,5 +1,6 @@
 package com.example.cats.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
@@ -47,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void moveToCatDetailActivity(Cat cat) {
-        Toast.makeText(this, cat.toString(), Toast.LENGTH_SHORT).show();
+        Intent moveToCatDetailIntent = new Intent(MainActivity.this, CatDetailActivity.class);
+        moveToCatDetailIntent.putExtra(CatDetailActivity.EXTRA_CAT, cat);
+        startActivity(moveToCatDetailIntent);
     }
 }
