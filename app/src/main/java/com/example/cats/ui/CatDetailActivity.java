@@ -1,8 +1,10 @@
-package com.example.cats;
+package com.example.cats.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.cats.R;
 
 public class CatDetailActivity extends AppCompatActivity {
 
