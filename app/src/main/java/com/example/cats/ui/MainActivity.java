@@ -1,4 +1,4 @@
-package com.example.cats;
+package com.example.cats.ui;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.cats.R;
 import com.example.cats.adapters.ListCatAdapter;
 import com.example.cats.models.Cat;
 import com.example.cats.data.CatsData;
