@@ -8,6 +8,9 @@ package com.example.cats.models;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Cat implements Parcelable {
     private String name;
     private String image;
@@ -17,9 +20,9 @@ public class Cat implements Parcelable {
     private Integer childFriendly;
     private Integer dogFriendly;
     private Integer strangerFriendly;
-    private String temperament;
+    private List<String> temperament;
 
-    public Cat(String name, String image, String origin, String lifeSpan, String description, Integer childFriendly, Integer dogFriendly, Integer strangerFriendly, String temperament) {
+    public Cat(String name, String image, String origin, String lifeSpan, String description, Integer childFriendly, Integer dogFriendly, Integer strangerFriendly, List<String> temperament) {
         this.name = name;
         this.image = image;
         this.origin = origin;
@@ -95,11 +98,11 @@ public class Cat implements Parcelable {
         this.strangerFriendly = strangerFriendly;
     }
 
-    public String getTemperament() {
+    public List<String> getTemperament() {
         return temperament;
     }
 
-    public void setTemperament(String temperament) {
+    public void setTemperament(List<String> temperament) {
         this.temperament = temperament;
     }
 
@@ -114,7 +117,7 @@ public class Cat implements Parcelable {
                 ", childFriendly=" + childFriendly +
                 ", dogFriendly=" + dogFriendly +
                 ", strangerFriendly=" + strangerFriendly +
-                ", temperament='" + temperament + '\'' +
+                ", temperament=" + temperament +
                 '}';
     }
 
@@ -134,7 +137,7 @@ public class Cat implements Parcelable {
         dest.writeValue(this.childFriendly);
         dest.writeValue(this.dogFriendly);
         dest.writeValue(this.strangerFriendly);
-        dest.writeString(this.temperament);
+        dest.writeStringList(this.temperament);
     }
 
     protected Cat(Parcel in) {
@@ -146,10 +149,10 @@ public class Cat implements Parcelable {
         this.childFriendly = (Integer) in.readValue(Integer.class.getClassLoader());
         this.dogFriendly = (Integer) in.readValue(Integer.class.getClassLoader());
         this.strangerFriendly = (Integer) in.readValue(Integer.class.getClassLoader());
-        this.temperament = in.readString();
+        this.temperament = in.createStringArrayList();
     }
 
-    public static final Parcelable.Creator<Cat> CREATOR = new Parcelable.Creator<Cat>() {
+    public static final Creator<Cat> CREATOR = new Creator<Cat>() {
         @Override
         public Cat createFromParcel(Parcel source) {
             return new Cat(source);
