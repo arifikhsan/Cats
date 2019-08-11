@@ -7,6 +7,7 @@ package com.example.cats.ui;
 
 import android.os.Bundle;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -19,6 +20,7 @@ public class CatDetailActivity extends AppCompatActivity {
     public static final String EXTRA_CAT = "extra_cat";
 
     ImageView imageView;
+    TextView tvName, tvDescription;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +28,8 @@ public class CatDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_cat_detail);
 
         imageView = findViewById(R.id.img_cat_detail);
+        tvName = findViewById(R.id.tv_name);
+        tvDescription = findViewById(R.id.tv_description);
 
         Cat cat = getIntent().getParcelableExtra(EXTRA_CAT);
         if (cat != null) {
@@ -33,6 +37,9 @@ public class CatDetailActivity extends AppCompatActivity {
                     .load(cat.getImage())
                     .apply(new RequestOptions().override(200, 200))
                     .into(imageView);
+
+            tvName.setText(cat.getName());
+            tvDescription.setText(cat.getDescription());
         }
     }
 }
