@@ -8,7 +8,7 @@ package com.example.cats.data;
 import com.example.cats.models.About;
 
 public class AboutData {
-    public static About about;
+    private static About about;
 
     public static About getAbout() {
         about.setName("Arif Ikhsanudin");

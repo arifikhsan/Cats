@@ -38,11 +38,11 @@ public class ListCatAdapter extends RecyclerView.Adapter<ListCatAdapter.ListView
         this.cats = cats;
     }
 
-    public class ListViewHolder extends RecyclerView.ViewHolder {
+    class ListViewHolder extends RecyclerView.ViewHolder {
         ImageView imgCat;
         TextView tvName, tvOrigin, tvDescription;
 
-        public ListViewHolder(@NonNull View itemView) {
+        ListViewHolder(@NonNull View itemView) {
             super(itemView);
             imgCat = itemView.findViewById(R.id.img_cat);
             tvName = itemView.findViewById(R.id.tv_item_name);

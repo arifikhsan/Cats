@@ -6,9 +6,9 @@
 package com.example.cats.models;
 
 public class About {
-    public String name;
-    public String image;
-    public String email;
+    private String name;
+    private String image;
+    private String email;
 
     public String getName() {
         return name;
