@@ -18,9 +18,9 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.CircularProgressDrawable;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 import com.bumptech.glide.request.RequestOptions;
 import com.example.cats.R;
 import com.example.cats.models.Cat;
@@ -32,7 +32,7 @@ public class ListCatAdapter extends RecyclerView.Adapter<ListCatAdapter.ListView
 
     private OnItemClickCallback onItemClickCallback;
 
-    public void setOnItemClickCallback(OnItemClickCallback onItemClickCallback) {
+    void setOnItemClickCallback(OnItemClickCallback onItemClickCallback) {
         this.onItemClickCallback = onItemClickCallback;
     }
 
@@ -68,10 +68,17 @@ public class ListCatAdapter extends RecyclerView.Adapter<ListCatAdapter.ListView
     public void onBindViewHolder(@NonNull final ListViewHolder holder, int position) {
         Cat cat = cats.get(position);
 
+        CircularProgressDrawable circularProgressDrawable = new CircularProgressDrawable(holder.itemView.getContext());
+        circularProgressDrawable.setStrokeWidth(5f);
+        circularProgressDrawable.setCenterRadius(30f);
+        circularProgressDrawable.start();
+
         Glide.with(holder.itemView.getContext())
                 .load(cat.getImage())
-                .transition(DrawableTransitionOptions.withCrossFade())
-                .apply(new RequestOptions().override(60, 60))
+                .apply(new RequestOptions()
+                        .placeholder(circularProgressDrawable)
+                        .override(60, 60)
+                )
                 .into(holder.imgCat);
 
         holder.tvName.setText(cat.getName());
