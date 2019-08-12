@@ -50,7 +50,7 @@ public class CatsData {
         ));
         arrayList.add(new Cat(
                 "American Curl",
-                "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/American_curl_2.jpg/800px-American_curl_2.jpg",
+                "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/ACL_Pointocurl_Fiorentina.jpg/1024px-ACL_Pointocurl_Fiorentina.jpg",
                 "United States",
                 "12 to 16",
                 "Distinguished by truly unique ears that curl back in a graceful arc, offering an alert, perky, happily surprised expression, they cause people to break out into a big smile when viewing their first Curl. Curls are very people-oriented, faithful, affectionate soulmates, adjusting remarkably fast to other pets, children, and new situations.",
@@ -105,7 +105,7 @@ public class CatsData {
         ));
         arrayList.add(new Cat(
                 "Balinese",
-                "https://upload.wikimedia.org/wikipedia/commons/0/05/Old-Style_Balinese_Cat.png",
+                "https://upload.wikimedia.org/wikipedia/commons/2/24/Old-Style_Lilac_Point_Balinese.png",
                 "United States",
                 "10 to 15",
                 "Balinese are curious, outgoing, intelligent cats with excellent communication skills. They are known for their chatty personalities and are always eager to tell you their views on life, love, and what you’ve served them for dinner.",
@@ -171,7 +171,7 @@ public class CatsData {
         ));
         arrayList.add(new Cat(
                 "British Shorthair",
-                "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Britishblue.jpg/800px-Britishblue.jpg",
+                "https://upload.wikimedia.org/wikipedia/commons/1/15/Britskorthaar-64091287828362D7bA.jpg",
                 "United Kingdom",
                 "12 to 17",
                 "The British Shorthair is a very pleasant cat to have as a companion, ans is easy going and placid. The British is a fiercely loyal, loving cat and will attach herself to every one of her family members. While loving to play, she doesn't need hourly attention. If she is in the mood to play, she will find someone and bring a toy to that person. The British also plays well by herself, and thus is a good companion for single people.",
