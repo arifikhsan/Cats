@@ -7,21 +7,28 @@ package com.example.cats.ui;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.example.cats.R;
+import com.example.cats.adapters.ListTemperamentAdapter;
 import com.example.cats.models.Cat;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class CatDetailActivity extends AppCompatActivity {
     public static final String EXTRA_CAT = "extra_cat";
 
-    ImageView imageView;
-    TextView tvName, tvChildFriendly, tvDogFriendly, tvStrangerFriendly, tvDescription;
+    private RecyclerView rvTemperament;
+    private ArrayList<String> temperament = new ArrayList<>();
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -29,12 +36,15 @@ public class CatDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cat_detail);
 
-        imageView = findViewById(R.id.img_cat_detail);
-        tvName = findViewById(R.id.tv_name);
-        tvDescription = findViewById(R.id.tv_description);
-        tvChildFriendly = findViewById(R.id.tv_child_friendly);
-        tvDogFriendly = findViewById(R.id.tv_dog_friendly);
-        tvStrangerFriendly = findViewById(R.id.tv_stranger_friendly);
+        rvTemperament = findViewById(R.id.rv_temperament);
+
+        ImageView imageView = findViewById(R.id.img_cat_detail);
+        TextView tvName = findViewById(R.id.tv_name);
+        TextView tvDescription = findViewById(R.id.tv_description);
+        TextView tvChildFriendly = findViewById(R.id.tv_child_friendly);
+        TextView tvDogFriendly = findViewById(R.id.tv_dog_friendly);
+        TextView tvStrangerFriendly = findViewById(R.id.tv_stranger_friendly);
+        TextView tvLifespan = findViewById(R.id.tv_lifespan);
 
         Cat cat = getIntent().getParcelableExtra(EXTRA_CAT);
         if (cat != null) {
@@ -48,6 +58,9 @@ public class CatDetailActivity extends AppCompatActivity {
             tvChildFriendly.setText(cat.getChildFriendly().toString());
             tvDogFriendly.setText(cat.getDogFriendly().toString());
             tvStrangerFriendly.setText(cat.getStrangerFriendly().toString());
+            temperament.addAll(cat.getTemperament());
+            showTemperamentList();
+            tvLifespan.setText(cat.getLifeSpan() + " years.");
             tvDescription.setText(cat.getDescription());
         }
     }
@@ -56,6 +69,11 @@ public class CatDetailActivity extends AppCompatActivity {
         if (getSupportActionBar() != null) {
             getSupportActionBar().setTitle(title);
         }
+    }
+
+    private void showTemperamentList() {
+        rvTemperament.setLayoutManager(new  LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+        rvTemperament.setAdapter(new ListTemperamentAdapter(temperament));
     }
 
     protected String getVocalConjunctionOf(String name) {
