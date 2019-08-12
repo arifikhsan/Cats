@@ -37,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
         rvCats.setHasFixedSize(true);
 
         cats.addAll(CatsData.getArrayList());
-        Log.d(TAG, "onCreate: " + cats.toString());
         showRecyclerList();
     }
 
