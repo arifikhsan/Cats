@@ -4,7 +4,7 @@
   -->
 
 <resources>
-    <string name="app_name">A Collection of Cat Breeds</string>
+    <string name="app_name">Cat Breeds</string>
     <string name="my_name">Arif Ikhsanudin</string>
     <string name="my_email">arif.ikhsanudin.developer@gmail.com</string>
     <string name="child_friendly">Child\nFriendly</string>
