@@ -1,9 +1,14 @@
 /*
  * Created by Arif Ikhsanudin
+ * On 8/12/19 3:27 PM
+ */
+
+/*
+ * Created by Arif Ikhsanudin
  * On 8/11/19 12:07 PM
  */
 
-package com.example.cats.adapters;
+package com.example.cats.ui.cats;
 
 import android.view.LayoutInflater;
 import android.view.View;

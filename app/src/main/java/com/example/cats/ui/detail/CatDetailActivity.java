@@ -1,13 +1,17 @@
 /*
  * Created by Arif Ikhsanudin
+ * On 8/12/19 3:26 PM
+ */
+
+/*
+ * Created by Arif Ikhsanudin
  * On 8/11/19 12:07 PM
  */
 
-package com.example.cats.ui;
+package com.example.cats.ui.detail;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -18,11 +22,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.example.cats.R;
-import com.example.cats.adapters.ListTemperamentAdapter;
+import com.example.cats.ui.detail.ListTemperamentAdapter;
 import com.example.cats.models.Cat;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class CatDetailActivity extends AppCompatActivity {
     public static final String EXTRA_CAT = "extra_cat";

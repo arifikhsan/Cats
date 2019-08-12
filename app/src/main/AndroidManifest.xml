@@ -17,7 +17,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
-        <activity android:name=".ui.MainActivity">
+        <activity android:name=".ui.cats.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -25,18 +25,18 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.CatDetailActivity"
-            android:parentActivityName=".ui.MainActivity">
+            android:name=".ui.detail.CatDetailActivity"
+            android:parentActivityName=".ui.cats.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.MainActivity" />
+                android:value=".ui.cats.MainActivity" />
         </activity>
         <activity
-            android:name=".ui.AboutActivity"
-            android:parentActivityName=".ui.MainActivity">
+            android:name=".ui.about.AboutActivity"
+            android:parentActivityName=".ui.cats.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.MainActivity" />
+                android:value=".ui.cats.MainActivity" />
         </activity>
     </application>
 

@@ -1,9 +1,14 @@
 /*
  * Created by Arif Ikhsanudin
+ * On 8/12/19 3:26 PM
+ */
+
+/*
+ * Created by Arif Ikhsanudin
  * On 8/11/19 12:07 PM
  */
 
-package com.example.cats.ui;
+package com.example.cats.ui.about;
 
 import androidx.appcompat.app.AppCompatActivity;
 
