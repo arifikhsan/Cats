@@ -8,7 +8,7 @@ package com.example.cats.data;
 import com.example.cats.models.Cat;
 
 import java.util.ArrayList;
-import java.util.Collections;
+import java.util.Arrays;
 
 public class CatsData {
 
@@ -24,7 +24,7 @@ public class CatsData {
                 3,
                 4,
                 5,
-                Collections.singletonList("Active, Energetic, Independent, Intelligent, Gentle")
+                new ArrayList<>(Arrays.asList("Active", "Energetic", "Independent", "Intelligent", "Gentle"))
         ));
         arrayList.add(new Cat(
                 "Aegean",
@@ -35,7 +35,7 @@ public class CatsData {
                 4,
                 4,
                 4,
-                Collections.singletonList("Affectionate, Social, Intelligent, Playful, Active")
+                new ArrayList<>(Arrays.asList("Affectionate", "Social", "Intelligent", "Playful", "Active"))
         ));
         arrayList.add(new Cat(
                 "American Bobtail",
@@ -46,7 +46,7 @@ public class CatsData {
                 4,
                 5,
                 3,
-                Collections.singletonList("Intelligent, Interactive, Lively, Playful, Sensitive")
+                new ArrayList<>(Arrays.asList("Intelligent", "Interactive", "Lively", "Playful", "Sensitive"))
         ));
         arrayList.add(new Cat(
                 "American Curl",
@@ -57,7 +57,7 @@ public class CatsData {
                 4,
                 5,
                 3,
-                Collections.singletonList("Affectionate, Curious, Intelligent, Interactive, Lively, Playful, Social")
+                new ArrayList<>(Arrays.asList("Affectionate", "Curious", "Intelligent", "Interactive", "Lively", "Playful", "Social"))
         ));
         arrayList.add(new Cat(
                 "American Shorthair",
@@ -68,7 +68,7 @@ public class CatsData {
                 5,
                 3,
                 3,
-                Collections.singletonList("Active, Curious, Easy Going, Playful, Calm")
+                new ArrayList<>(Arrays.asList("Active", "Curious", "Easy Going", "Playful", "Calm"))
         ));
         arrayList.add(new Cat(
                 "American Wirehair",
@@ -79,7 +79,7 @@ public class CatsData {
                 4,
                 5,
                 3,
-                Collections.singletonList("Affectionate, Curious, Gentle, Intelligent, Interactive, Lively, Loyal, Playful, Sensible, Social")
+                new ArrayList<>(Arrays.asList("Affectionate", "Curious", "Gentle", "Intelligent", "Interactive", "Lively", "Loyal", "Playful", "Sensible", "Social"))
         ));
         arrayList.add(new Cat(
                 "Arabian Mau",
@@ -90,7 +90,7 @@ public class CatsData {
                 4,
                 5,
                 3,
-                Collections.singletonList("Affectionate, Agile, Curious, Independent, Playful, Loyal")
+                new ArrayList<>(Arrays.asList("Affectionate", "Agile", "Curious", "Independent", "Playful", "Loyal"))
         ));
         arrayList.add(new Cat(
                 "Australian Mist",
@@ -101,7 +101,7 @@ public class CatsData {
                 4,
                 5,
                 4,
-                Collections.singletonList("Lively, Social, Fun-loving, Relaxed, Affectionate")
+                new ArrayList<>(Arrays.asList("Lively", "Social", "Fun-loving", "Relaxed", "Affectionate"))
         ));
         arrayList.add(new Cat(
                 "Balinese",
@@ -112,7 +112,7 @@ public class CatsData {
                 4,
                 5,
                 5,
-                Collections.singletonList("Affectionate, Intelligent, Playful")
+                new ArrayList<>(Arrays.asList("Affectionate", "Intelligent", "Playful"))
         ));
         arrayList.add(new Cat(
                 "Bambino",
@@ -123,7 +123,7 @@ public class CatsData {
                 4,
                 5,
                 3,
-                Collections.singletonList("Affectionate, Lively, Friendly, Intelligent")
+                new ArrayList<>(Arrays.asList("Affectionate", "Lively", "Friendly", "Intelligent"))
         ));
         arrayList.add(new Cat(
                 "Bengal",
@@ -134,7 +134,7 @@ public class CatsData {
                 4,
                 5,
                 3,
-                Collections.singletonList("Alert, Agile, Energetic, Demanding, Intelligent")
+                new ArrayList<>(Arrays.asList("Alert", "Agile", "Energetic", "Demanding", "Intelligent"))
         ));
         arrayList.add(new Cat(
                 "Birman",
@@ -145,7 +145,7 @@ public class CatsData {
                 4,
                 5,
                 3,
-                Collections.singletonList("Affectionate, Active, Gentle, Social")
+                new ArrayList<>(Arrays.asList("Affectionate", "Active", "Gentle", "Social"))
         ));
         arrayList.add(new Cat(
                 "Bombay",
@@ -156,7 +156,7 @@ public class CatsData {
                 4,
                 5,
                 4,
-                Collections.singletonList("Affectionate, Dependent, Gentle, Intelligent, Playful")
+                new ArrayList<>(Arrays.asList("Affectionate", "Dependent", "Gentle", "Intelligent", "Playful"))
         ));
         arrayList.add(new Cat(
                 "British Longhair",
@@ -167,7 +167,7 @@ public class CatsData {
                 4,
                 5,
                 4,
-                Collections.singletonList("Affectionate, Easy Going, Independent, Intelligent, Loyal, Social")
+                new ArrayList<>(Arrays.asList("Affectionate", "Easy Going", "Independent", "Intelligent", "Loyal", "Social"))
         ));
         arrayList.add(new Cat(
                 "British Shorthair",
@@ -178,7 +178,7 @@ public class CatsData {
                 4,
                 5,
                 2,
-                Collections.singletonList("Affectionate, Easy Going, Gentle, Loyal, Patient, calm")
+                new ArrayList<>(Arrays.asList("Affectionate", "Easy Going", "Gentle", "Loyal", "Patient", "calm"))
         ));
         return arrayList;
     }
