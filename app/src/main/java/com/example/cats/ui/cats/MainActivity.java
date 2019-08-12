@@ -16,11 +16,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.cats.R;
+import com.example.cats.base.BaseActivity;
 import com.example.cats.data.CatsData;
 import com.example.cats.models.Cat;
 import com.example.cats.ui.about.AboutActivity;
@@ -28,20 +28,29 @@ import com.example.cats.ui.detail.CatDetailActivity;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
     private RecyclerView rvCats;
     private ArrayList<Cat> cats = new ArrayList<>();
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    protected void setToolbar() {}
 
+    @Override
+    protected void initView() {
         rvCats = findViewById(R.id.rv_cat);
         rvCats.setHasFixedSize(true);
+    }
 
-        cats.addAll(CatsData.getArrayList());
+    @Override
+    protected void populateView() {
+        addCatsToList();
         showRecyclerList();
+    }
+
+    private void addCatsToList() {
+        if (cats.size() <= 1) {
+            cats.addAll(CatsData.getArrayList());
+        }
     }
 
     private void showRecyclerList() {
@@ -83,5 +92,10 @@ public class MainActivity extends AppCompatActivity {
 
     protected void showAboutMe() {
         startActivity(new Intent(this, AboutActivity.class));
+    }
+
+    @Override
+    protected int getLayoutResourceId() {
+        return R.layout.activity_main;
     }
 }

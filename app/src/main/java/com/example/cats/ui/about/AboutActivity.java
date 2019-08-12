@@ -10,8 +10,6 @@
 
 package com.example.cats.ui.about;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.net.Uri;
 import android.os.Bundle;
 import android.widget.ImageView;
@@ -19,21 +17,34 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.example.cats.R;
+import com.example.cats.base.BaseActivity;
 
-public class AboutActivity extends AppCompatActivity {
+public class AboutActivity extends BaseActivity {
     ImageView imgAbout;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_about);
+    protected int getLayoutResourceId() {
+        return R.layout.activity_about;
+    }
 
+    @Override
+    protected void setToolbar() {
         if (getSupportActionBar() != null) {
             getSupportActionBar().setTitle("About Me");
         }
+    }
 
+    @Override
+    protected void initView() {
         imgAbout = findViewById(R.id.img_about);
+    }
 
+    @Override
+    protected void populateView() {
+        populateImage();
+    }
+
+    private void populateImage() {
         Glide.with(this)
                 .load(Uri.parse("file:///android_asset/images/arif_ikhsanudin.jpg"))
                 .apply(new RequestOptions().override(200, 200))
