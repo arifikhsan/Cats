@@ -11,7 +11,6 @@
 package com.example.cats.ui.cats;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -33,7 +32,8 @@ public class MainActivity extends BaseActivity {
     private ArrayList<Cat> cats = new ArrayList<>();
 
     @Override
-    protected void setToolbar() {}
+    protected void setToolbar() {
+    }
 
     @Override
     protected void initView() {
@@ -48,9 +48,8 @@ public class MainActivity extends BaseActivity {
     }
 
     private void addCatsToList() {
-        if (cats.size() <= 1) {
-            cats.addAll(CatsData.getArrayList());
-        }
+        cats.clear();
+        cats.addAll(CatsData.getArrayList());
     }
 
     private void showRecyclerList() {

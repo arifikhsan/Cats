@@ -15,6 +15,7 @@ public class CatsData {
     private static ArrayList<Cat> arrayList = new ArrayList<>();
 
     public static ArrayList<Cat> getArrayList() {
+        arrayList.clear();
         arrayList.add(new Cat(
                 "Abyssinian",
                 "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Gustav_chocolate.jpg/220px-Gustav_chocolate.jpg",
