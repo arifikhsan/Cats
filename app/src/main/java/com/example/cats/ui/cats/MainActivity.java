@@ -31,7 +31,6 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
     private RecyclerView rvCats;
     private ArrayList<Cat> cats = new ArrayList<>();
-    private String TAG = "MainActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
