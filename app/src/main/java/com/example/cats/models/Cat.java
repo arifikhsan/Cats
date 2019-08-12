@@ -20,9 +20,9 @@ public class Cat implements Parcelable {
     private Integer childFriendly;
     private Integer dogFriendly;
     private Integer strangerFriendly;
-    private List<String> temperament;
+    private ArrayList<String> temperament;
 
-    public Cat(String name, String image, String origin, String lifeSpan, String description, Integer childFriendly, Integer dogFriendly, Integer strangerFriendly, List<String> temperament) {
+    public Cat(String name, String image, String origin, String lifeSpan, String description, Integer childFriendly, Integer dogFriendly, Integer strangerFriendly, ArrayList<String> temperament) {
         this.name = name;
         this.image = image;
         this.origin = origin;
@@ -102,7 +102,7 @@ public class Cat implements Parcelable {
         return temperament;
     }
 
-    public void setTemperament(List<String> temperament) {
+    public void setTemperament(ArrayList<String> temperament) {
         this.temperament = temperament;
     }
 
