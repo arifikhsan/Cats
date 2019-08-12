@@ -20,6 +20,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 import com.bumptech.glide.request.RequestOptions;
 import com.example.cats.R;
 import com.example.cats.models.Cat;
@@ -69,6 +70,7 @@ public class ListCatAdapter extends RecyclerView.Adapter<ListCatAdapter.ListView
 
         Glide.with(holder.itemView.getContext())
                 .load(cat.getImage())
+                .transition(DrawableTransitionOptions.withCrossFade())
                 .apply(new RequestOptions().override(60, 60))
                 .into(holder.imgCat);
 
