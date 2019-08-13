@@ -9,9 +9,9 @@ android {
     signingConfigs {
         release {
             storeFile file('C:\\Users\\arifi\\code\\android\\keystores\\arifikhsanudinkeystore.jks')
-            storePassword 'myanimelist'
-            keyAlias = 'Short password'
-            keyPassword 'myanimelist'
+            storePassword ANDROID_STORE_PASSWORD
+            keyAlias ANDROID_ALIAS_PASSWORD
+            keyPassword ANDROID_KEY_PASSWORD
         }
     }
     compileSdkVersion 29
